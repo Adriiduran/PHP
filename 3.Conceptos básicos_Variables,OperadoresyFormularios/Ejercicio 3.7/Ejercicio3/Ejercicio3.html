@@ -1,0 +1,43 @@
+<!--Mostrar en una página varios parametros para configurar el aspecto de otra página: color de fondo, tipo de letra, alineación del texto, imagen del banner (entre 3 posibles), y demás reglas de estilo que se te ocurran. Una vez la información se mostrará una página con el contenido que desees acorde a los estilos elegidos.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./PaginaCSSconPHP.php" method="get">
+        <label for="background">Elige el color de fondo:</label>
+        <select name="background">
+            <option value="red">Rojo</option>
+            <option value="yellow">Amarillo</option>
+            <option value="green">Verde</option>
+        </select>
+        <br>
+        <label for="font">Elige la fuente de la letra:</label>
+        <select name="font">
+            <option value="Serif">Serif</option>
+            <option value="Sans-serif">Sans-serif</option>
+            <option value="Monospace">Monospace</option>
+        </select>
+        <br>
+        <label for="image">Elige la imagen a mostrar:</label>
+        <select name="image">
+            <option value="beagle">Perro</option>
+            <option value="gato">Gato</option>
+            <option value="pajaro">Pajaro</option>
+        </select>
+        <br>
+        <label for="textalign">Elige la alineación del texto:</label>
+        <select name="textalign">
+            <option value="left">Izquierda</option>
+            <option value="right">Derecha</option>
+            <option value="center">Centro</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Calculo del volumen de un cilindro</h2>
-    <img src="./cilindro.webp">
-    <h3><?php 
-        $altura = $_GET["altura"];
-        $diametro = $_GET["diametro"];
-        
-        echo "El volumen del cilindro es: ".$altura*$diametro*pi();
-    ?></h3>
+    <?php 
+        $diametro = $_GET['diametro'];
+        $altura = $_GET['altura'];
+        $caudal = $_GET['caudal'];
+
+        $resultado = ((pi()*$altura*(pow($diametro/2,2)))/$caudal)/60;
+    ?>
+
+    <h2><?php echo $resultado, " horas"; ?></h2>
 </body>
 </html>
