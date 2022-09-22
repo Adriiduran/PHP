@@ -9,13 +9,15 @@
         $background = $_GET['background'];
         $font = $_GET['font'];
         $image = $_GET['image'];
-        $textalign = $_GET['textalign']
+        $textalign = $_GET['textalign'];
+        $fontsize = $_GET['fontsize'];
     ?>
     <style>
         body{
             background-color: <?php print $background; ?>;
             font-family: <?php print $font; ?>;
-            text-align: <?php print $textalign;?>;
+            text-align: <?php print $textalign; ?>;
+            font-size: <?php echo $fontsize,"px"; ?>;
         }
 
         .imagen {

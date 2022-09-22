@@ -12,9 +12,10 @@
         $altura = $_GET['altura'];
         $caudal = $_GET['caudal'];
 
-        $resultado = ((pi()*$altura*(pow($diametro/2,2)))/$caudal)/60;
+        $resultado = round(((pi()*$altura*(pow($diametro/2,2)))/$caudal)/60,3);
+        $decimales = explode(".",$resultado);
     ?>
 
-    <h2><?php echo $resultado, " horas"; ?></h2>
+    <h2><?php echo $decimales[0], " horas y ",floor($decimales[1]/24)," minutos"; ?></h2>
 </body>
 </html>
