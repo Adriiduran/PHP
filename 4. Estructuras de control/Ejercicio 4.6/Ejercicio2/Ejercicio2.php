@@ -9,30 +9,32 @@
 </head>
 
 <body>
-    <?php
-    $num1 = rand(1,50);
-    $num2 = rand(1,50);
-    $num3 = rand(1,50);
-    $num4 = rand(1,50);
-    $num5 = rand(1,50);
-    $num6 = rand(1,50);
-    $aciertos = 0;
+    <form action="./Ejercicio2-Validacion.php" method="post">
 
-    if (isset($_POST['submit'])) {
+        <table border="1">
+            <?php
+            $variable = 0;
 
-        if (!empty($_POST['numeros'])) {
+            for ($i = 1; $i <= 50; $i++) {
 
-            foreach ($_POST['numeros'] as $selected) {
-                if ($selected == $num1 || $selected == $num2 || $selected == $num3 || $selected == $num4 || $selected == $num5 || $selected == $num6) {
-                    $aciertos++;
+                if ($variable == 0) {
+                    echo "<tr>";
+                }
+
+                echo '<td><input type="checkbox" value="' . $i . '" name="' . $i . '">'.$i.'</td>';
+                $variable++;
+
+                if ($variable == 10) {
+                    echo "</tr>";
+                    $variable = 1;
                 }
             }
-        }
-    }
-
-    echo $aciertos; 
-    
-    ?>
+            ?>
+        </table>
+        <label for="serie">Introduce nº serie</label>
+        <input type="number" name="serie" max="999" min="1">
+        <button type="submit" name="submit">Enviar</button>
+    </form>
 </body>
 
 </html>
