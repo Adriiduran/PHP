@@ -10,6 +10,7 @@
 
 <body>
     <?php
+    /*Creación de números aleatorios*/
     $num1 = rand(1, 50);
     $num2 = rand(1, 50);
     $num3 = rand(1, 50);
@@ -18,6 +19,7 @@
     $num6 = rand(1, 50);
     $serie = rand(1, 999);
 
+    /*Muestra los números ganadores*/
     echo '<table border="1"><tr>';
     echo "<td>Numero 1: " . $num1 . "</td>";
     echo "<td>Numero 2: " . $num2 . "</td>";
@@ -35,6 +37,7 @@
         $aciertos = 0;
         $dinero = 0;
 
+        /*Comprueba cuantos aciertos a obtenido el usuario*/
         for ($i = 1; $i < 50; $i++) {
             if (isset($_REQUEST["$i"])) {
                 if ($_REQUEST["$i"] == $num1 || $_REQUEST["$i"] == $num2 || $_REQUEST["$i"] == $num3 || $_REQUEST["$i"] == $num4 || $_REQUEST["$i"] == $num5 || $_REQUEST["$i"] == $num6) {
@@ -43,6 +46,7 @@
             }
         }
 
+        /*Comprueba si el usuario a acertado el número de serie*/
         if ($serie == $_REQUEST["serie"]) {
             $dinero = 500;
         }

@@ -1,11 +1,8 @@
 <?php 
     if (isset($_GET["correcto"])) {
 
+        //se recupera si el usuario ha hecho click en la imagen correcta
         $correcto = $_GET["correcto"];
-
-        /*echo $correcto;
-
-        header("Refresh:2; url=./Ejercicio5.php");*/
         
         if ($correcto == 0) {
             header("location:./Ejercicio5-Correcto.php");

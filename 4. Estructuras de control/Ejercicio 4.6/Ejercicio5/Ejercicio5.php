@@ -16,6 +16,7 @@
 
 <body>
     <?php
+    /*bucles anidados para la creación de la tabla*/
     for ($i = 0; $i < 10; $i++) {
         if ($i == 0) {
             echo '<table>';

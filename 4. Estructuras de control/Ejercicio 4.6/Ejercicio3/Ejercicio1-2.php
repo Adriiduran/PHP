@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ENHORABUENA! HAS ACERTADO EN: <?php echo $_GET['intentos']?></h1>
+    
+    <h1>ENHORABUENA! HAS ACERTADO EN: <?php echo $_GET['intentos'] //se recuperan los intentos para mostrarlos por pantalla?></h1>
     <img src="./images/gollum.jpg">
 </body>
 </html>

@@ -10,7 +10,7 @@
 
 <body>
     <?php
-
+    /*Cada vez que se redirecciona al usuario a una nueva página se pasa como parametro la variable global intentos*/
     if (isset($_GET["nombre"])) {
         $nombre = $_GET["nombre"];
         if ($nombre == "gollum") {

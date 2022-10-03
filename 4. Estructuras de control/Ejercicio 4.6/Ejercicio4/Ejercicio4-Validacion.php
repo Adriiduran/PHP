@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php 
+        //recupera a que piso y bloque se ha llamado para mostrarlo por pantalla
         echo 'Has llamdo al piso '.$_GET["contadorPiso"].' del bloque '.$_GET["contadorBloque"];
     ?>
 </body>

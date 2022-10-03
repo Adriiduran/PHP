@@ -14,7 +14,7 @@
         <table border="1">
             <?php
             $variable = 0;
-
+            /*Creación de tabla con bucle*/
             for ($i = 1; $i <= 50; $i++) {
 
                 if ($variable == 0) {

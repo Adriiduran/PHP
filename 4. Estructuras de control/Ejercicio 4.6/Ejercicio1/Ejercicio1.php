@@ -12,7 +12,8 @@
     <?php
 
     
-
+    /*Comprueba si se ha introducido un nombre. Si el nombre introducido es correcto lo lleva a la página
+    de la victoria. Del contrario muestra un mensaje y lo devuelve a la página original*/
     if (isset($_GET["nombre"])) {
         $nombre = $_GET["nombre"];
         if ($nombre == "gollum") {
@@ -23,6 +24,7 @@
             echo "<h1>LO SIENTO NO HAS ACERTADO</h1>";
         }
     }
+    /*Le muestra al usuario que imagen se escondía detras y lo devuelve a la página original*/
     else{
         header("Refresh:2; url=Ejercicio1.html");
     $num = $_REQUEST["num"];

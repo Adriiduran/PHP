@@ -15,9 +15,10 @@
 
 <body>
     <form action="./Ejercicio7-Validacion.php" method="post">
-
+        
         <table>
             <?php
+            //creación de tabla con checkboxs
             $variable = 0;
 
             for ($i = 1; $i <= 50; $i++) {
@@ -31,7 +32,7 @@
 
                 if ($variable == 10) {
                     echo "</tr>";
-                    $variable = 1;
+                    $variable = 0;
                 }
             }
             ?>

@@ -18,6 +18,8 @@ Cuando el usuario escriba algo y pulse el botón comprobar ocurrirá lo siguient
 
     <?php
 
+    /*Si el usuario ya ha probado anteriormente se respeta el número de intentos.
+    Si comienza de 0 se declara la variable con 0 intentos*/
     if (isset($_GET['intentos'])) {
         $intentos = $_GET['intentos'];
         $intentos++;
@@ -25,6 +27,7 @@ Cuando el usuario escriba algo y pulse el botón comprobar ocurrirá lo siguient
         $intentos = 0;
     }
 
+    /*Se pasa como variable global independientemente del enlace que seleccione*/
     echo '<a href="./Ejercicio1-Validacion.php?num=1&intentos=' . $intentos . '"><img src="./images/oculto.jpg"></a>';
     echo '<a href="./Ejercicio1-Validacion.php?num=2&intentos=' . $intentos . '"><img src="./images/oculto.jpg"></a>';
     echo '<a href="./Ejercicio1-Validacion.php?num=3&intentos=' . $intentos . '"><img src="./images/oculto.jpg"></a><br>';
@@ -43,6 +46,7 @@ Cuando el usuario escriba algo y pulse el botón comprobar ocurrirá lo siguient
     </form>
 
     <?php
+        /*Se muestran los intentos*/
         echo "Intentos: " . $intentos;
     ?>
 </body>
