@@ -10,8 +10,6 @@
 
 <body>
     <?php
-
-    
     /*Comprueba si se ha introducido un nombre. Si el nombre introducido es correcto lo lleva a la página
     de la victoria. Del contrario muestra un mensaje y lo devuelve a la página original*/
     if (isset($_GET["nombre"])) {
@@ -61,8 +59,6 @@
     echo "<img src='./images/".$validacion."'>";
     }
     ?>
-
-
 </body>
 
 </html>
