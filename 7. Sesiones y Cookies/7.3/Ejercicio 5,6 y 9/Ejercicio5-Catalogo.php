@@ -11,8 +11,10 @@
 
 <body>
     <?php
+    //Rescata la colección de productos de las cookies
     $productos = unserialize(base64_decode($_COOKIE['productos']));
 
+    //Comprueba que producto se corresponde con el pasado por la url
     for ($i=0; $i < count($productos); $i++) { 
         if ($_GET['producto'] == $productos[$i][0]) {
             $selector = $i;
@@ -20,6 +22,7 @@
         }
     }
 
+    //Muestra la tarjeta personalizada con los datos del producto seleccionado
     echo '<h1 class="tituloTienda">DETALLE DEL PRODUCTO</h1>
     <div class="productoCatalogo">
         <img class="imagenCatalogo" src="'.$productos[$selector][2].'">

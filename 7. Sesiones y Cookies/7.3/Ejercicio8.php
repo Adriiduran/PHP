@@ -16,6 +16,7 @@ if (!isset($_COOKIE['diccionario'])) {
     );
 
     setcookie('diccionario', base64_encode(serialize($diccionario)), time() + (3600 * 24));
+    header('Refresh: 0 url=./Ejercicio8.php');
 }
 
 
@@ -28,9 +29,6 @@ if (isset($_GET['español'])) {
 
     setcookie('diccionario', base64_encode(serialize($palabras)), time() + (3600 * 24));
 }
-
-// print_r(unserialize(base64_decode($_COOKIE['diccionario'])));
-
 ?>
 
 <!DOCTYPE html>

@@ -2,10 +2,13 @@
 /*Escribe un programa que guarde en una cookie el color de fondo (propiedad background-color) de una página. Esta página debe tener únicamente algo de texto y un formulario para cambiar el color.*/
 
 if (isset($_GET['color'])) {
-    $_COOKIE['color'] = $_GET['color'];
+    setcookie("color", $_GET['color'], time() + 3600, "/");
+    header('Refresh: 0 url=./Ejercicio7.php');
+
 }
-else{
-    setcookie("color", 'none');
+
+if (!isset($_COOKIE['color'])) {
+    setcookie("color", 'none', time() + 3600, "/");
 }
 ?>
 
