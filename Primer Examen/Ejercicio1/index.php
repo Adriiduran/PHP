@@ -19,20 +19,7 @@ if (isset($_GET['eliminar'])) {
     }
 
     setcookie('categorias', base64_encode(serialize($cookieCategorias)), time() + (60 * 60 * 24 * 7), "/");
-    
-    if (isset($_COOKIE['copia'])) {
-        setcookie('copia', null, -1, '/');
-    }
 
-    header('Refresh: 0 url=./index.php');
-}
-
-if (isset($_GET['guardar'])) {
-    setcookie('copia', $_COOKIE['categorias'], time() + (60*60*24*365), '/');
-}
-
-if (isset($_GET['recuperar'])) {
-    setcookie('categorias', $_COOKIE['copia'], time() + (60*60*24*7), '/');
     header('Refresh: 0 url=./index.php');
 }
 
@@ -65,9 +52,6 @@ print_r($cookieCategorias);
 
     <div class="container">
         <a class="boton remove" href="./index.php?eliminar=">ELIMINAR TODAS LAS NOTICIAS</a>
-        <a href="./index.php?guardar=" class="boton">GUARDAR</a>
-        <a href="./index.php?recuperar=" class="boton">RECUPERAR</a>
-        <a href="./nuevaCategoria.php" class="boton">NUEVA CATEGORIA</a>
     </div>
 </body>
 
