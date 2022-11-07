@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://www.php.net/manual/es/function.date.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(95%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #0e1011;
+   --darkreader-neutral-text: #dcd8d3;
+   --darkreader-selection-background: #004aac;
+   --darkreader-selection-text: #edebe8;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #131516 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #131516;
+}
+html, body {
+    border-color: #726a5c;
+    color: #edebe8;
+}
+a {
+    color: #2f92ff;
+}
+table {
+    border-color: #52595c;
+}
+::placeholder {
+    color: #b5ada3;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #3d4100 !important;
+    color: #edebe8 !important;
+}
+::-webkit-scrollbar {
+    background-color: #1b1e1f;
+    color: #ada69a;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #42474a;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555c61;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #454c4f;
+}
+::-webkit-scrollbar-corner {
+    background-color: #131516;
+}
+::selection {
+    background-color: #004aac !important;
+    color: #edebe8 !important;
+}
+::-moz-selection {
+    background-color: #004aac !important;
+    color: #edebe8 !important;
+}</style>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: date - Manual </title>
+
+ <link rel="icon" type="image/svg+xml" sizes="any" href="https://www.php.net/favicon.svg?v=2">
+ <link rel="icon" type="image/png" sizes="196x196" href="https://www.php.net/favicon-196x196.png?v=2">
+ <link rel="icon" type="image/png" sizes="32x32" href="https://www.php.net/favicon-32x32.png?v=2">
+ <link rel="icon" type="image/png" sizes="16x16" href="https://www.php.net/favicon-16x16.png?v=2">
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico?v=2">
+
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/es/function.date.php">
+ <link rel="shorturl" href="https://www.php.net/date">
+ <link rel="alternate" href="https://www.php.net/date" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/es/index.php">
+ <link rel="index" href="https://www.php.net/manual/es/ref.datetime.php">
+ <link rel="prev" href="https://www.php.net/manual/es/function.date-timezone-set.php">
+ <link rel="next" href="https://www.php.net/manual/es/function.getdate.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/function.date.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/function.date.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/function.date.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/function.date.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/function.date.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/function.date.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ru/function.date.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/function.date.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/function.date.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="./Funciones Date_files/cached.php" media="screen"><style class="darkreader darkreader--sync" media="screen"></style>
+<link rel="stylesheet" type="text/css" href="./Funciones Date_files/cached(1).php" media="screen"><style class="darkreader darkreader--sync" media="screen"></style>
+<link rel="stylesheet" type="text/css" href="./Funciones Date_files/cached(2).php" media="screen"><style class="darkreader darkreader--sync" media="screen"></style>
+<link rel="stylesheet" type="text/css" href="./Funciones Date_files/cached(3).php" media="screen"><style class="darkreader darkreader--sync" media="screen"></style>
+
+ <!--<base href="https://www.php.net/manual/es/function.date.php">--><base href=".">
+
+
+<meta name="darkreader" content="e2556362dfaf4ae0b1c3894ec28244c1"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5100 !important;
+    border-color: #dcb20d !important;
+    color: #f9edcc !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0a3745 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #001b25 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #040404 !important;
+}
+.tou-uknfeu {
+    background-color: #1e1000 !important;
+}
+.tou-6i3zyv {
+    background-color: #14556b !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script><style>[_nghost-kni-c52]{font-family:Open Sans,sans-serif;color:#121212}</style><style class="darkreader darkreader--sync" media="screen"></style></head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="https://www.php.net/" class="brand"><img src="./Funciones Date_files/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="https://www.php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="https://www.php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="https://www.php.net/get-involved">Get Involved</a></li>
+      <li class=""><a href="https://www.php.net/support">Help</a></li>
+      <li class="">
+        <a href="https://www.php.net/releases/8.1/index.php">
+          <img src="./Funciones Date_files/logo_php8_1.svg" alt="php8.1" height="22" width="60">
+        </a>
+      </li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="https://www.php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="tt-hint search-query" type="text" autocomplete="off" spellcheck="off" disabled="" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(19, 21, 22); --darkreader-inline-border-top:transparent; --darkreader-inline-border-right:transparent; --darkreader-inline-border-bottom:transparent; --darkreader-inline-border-left:transparent; --darkreader-inline-boxshadow:none; --darkreader-inline-bgcolor:#090b0b; --darkreader-inline-bgimage:none;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-boxshadow="" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage=""><input type="search" name="pattern" class="search-query tt-query" placeholder="Search" accesskey="s" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; --darkreader-inline-bgcolor:transparent;" data-darkreader-inline-bgcolor=""><input type="submit" style="visibility: hidden; position: fixed"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Fira Sans&quot;, &quot;Source Sans Pro&quot;, Helvetica, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></span><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"></span></span>
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href="https://www.php.net/index.php#2022-11-03-1">PHP 7.4.33 Released!</a></div>
+<nav id="trick"><div><dl>
+<dt><a href="https://www.php.net/manual/en/getting-started.php">Getting Started</a></dt>
+	<dd><a href="https://www.php.net/manual/en/introduction.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/tutorial.php">A simple tutorial</a></dd>
+<dt><a href="https://www.php.net/manual/en/langref.php">Language Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/language.basic-syntax.php">Basic syntax</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.types.php">Types</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.variables.php">Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.constants.php">Constants</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.expressions.php">Expressions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.operators.php">Operators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.control-structures.php">Control Structures</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.functions.php">Functions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.oop5.php">Classes and Objects</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.namespaces.php">Namespaces</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.enumerations.php">Enumerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.errors.php">Errors</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.exceptions.php">Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.fibers.php">Fibers</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.generators.php">Generators</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.attributes.php">Attributes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/language.references.php">References Explained</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.variables.php">Predefined Variables</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.exceptions.php">Predefined Exceptions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/reserved.interfaces.php">Predefined Interfaces and Classes</a></dd>
+	<dd><a href="https://www.php.net/manual/en/context.php">Context options and parameters</a></dd>
+	<dd><a href="https://www.php.net/manual/en/wrappers.php">Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/security.php">Security</a></dt>
+	<dd><a href="https://www.php.net/manual/en/security.intro.php">Introduction</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.general.php">General considerations</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.cgi-bin.php">Installed as CGI binary</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.apache.php">Installed as an Apache module</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.sessions.php">Session Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.filesystem.php">Filesystem Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.database.php">Database Security</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.errors.php">Error Reporting</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.variables.php">User Submitted Data</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.hiding.php">Hiding PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/security.current.php">Keeping Current</a></dd>
+<dt><a href="https://www.php.net/manual/en/features.php">Features</a></dt>
+	<dd><a href="https://www.php.net/manual/en/features.http-auth.php">HTTP authentication with PHP</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.cookies.php">Cookies</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.sessions.php">Sessions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.xforms.php">Dealing with XForms</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.file-upload.php">Handling file uploads</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.remote-files.php">Using remote files</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.connection-handling.php">Connection handling</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.persistent-connections.php">Persistent Database Connections</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.commandline.php">Command line usage</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.gc.php">Garbage Collection</a></dd>
+	<dd><a href="https://www.php.net/manual/en/features.dtrace.php">DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href="https://www.php.net/manual/en/funcref.php">Function Reference</a></dt>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.php.php">Affecting PHP's Behaviour</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.audio.php">Audio Formats Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.auth.php">Authentication Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.cmdline.php">Command Line Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.compression.php">Compression and Archive Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.crypto.php">Cryptography Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.database.php">Database Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.calendar.php">Date and Time Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.file.php">File System Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.international.php">Human Language and Character Encoding Support</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.image.php">Image Processing and Generation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.math.php">Mathematical Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.remote.other.php">Other Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.search.php">Search Engine Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.session.php">Session Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.text.php">Text Processing</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.webservice.php">Web Services</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.xml.php">XML Manipulation</a></dd>
+	<dd><a href="https://www.php.net/manual/en/refs.ui.php">GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="https://www.php.net/manual/es/function.getdate.php">
+          getdate »
+        </a>
+      </div>
+              <div class="prev">
+        <a href="https://www.php.net/manual/es/function.date-timezone-set.php">
+          « date_timezone_set        </a>
+      </div>
+          <ul>
+            <li><a href="https://www.php.net/manual/es/index.php">Manual de PHP</a></li>      <li><a href="https://www.php.net/manual/es/funcref.php">Referencia de funciones</a></li>      <li><a href="https://www.php.net/manual/es/refs.calendar.php">Extensiones relacionadas con fecha y hora</a></li>      <li><a href="https://www.php.net/manual/es/book.datetime.php">Fecha/Hora</a></li>      <li><a href="https://www.php.net/manual/es/ref.datetime.php">Funciones de Fecha/Hora</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="https://www.php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value="en/function.date.php">English</option>
+            <option value="pt_BR/function.date.php">Brazilian Portuguese</option>
+            <option value="zh/function.date.php">Chinese (Simplified)</option>
+            <option value="fr/function.date.php">French</option>
+            <option value="de/function.date.php">German</option>
+            <option value="ja/function.date.php">Japanese</option>
+            <option value="ru/function.date.php">Russian</option>
+            <option value="es/function.date.php" selected="selected">Spanish</option>
+            <option value="tr/function.date.php">Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://github.com/php/doc-es/blob/master/reference/datetime/functions/date.xml">Submit a Pull Request</a>
+      <a href="https://github.com/php/doc-es/issues/new?body=From%20manual%20page:%20https:%2F%2Fphp.net%2Ffunction.date%0A%0A---">Report a Bug</a>
+    </div>
+  </div><div id="function.date" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">date</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">date</span> — <span class="dc-title">Dar formato a la fecha/hora local</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.date-description">
+  <h3 class="title">Descripción<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-description"> ¶</a></h3>
+  <div class="methodsynopsis dc-description"><span class="methodname"><strong>date</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code><span class="initializer"> = time()</span></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Devuelve una cadena formateada según el formato dado usando el
+   parámetro de tipo integer <code class="parameter">timestamp</code> dado o el momento actual
+   si no se da una marca de tiempo. En otras palabras, <code class="parameter">timestamp</code>
+   es opcional y por defecto es el valor de <span class="function"><a href="https://www.php.net/manual/es/function.time.php" class="function">time()</a></span>.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 parameters" id="refsect1-function.date-parameters">
+  <h3 class="title">Parámetros<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-parameters"> ¶</a></h3>
+  <dl>
+    
+     <dt>
+<code class="parameter">format</code></dt>
+
+     <dd>
+
+      <p class="para">
+       El formato de la fecha de salida tipo <span class="type">string</span>. Vea las opciones
+       de formato más abajo. También hay varias
+       <a href="https://www.php.net/manual/es/class.datetimeinterface.php#datetime.constants.types" class="link">constantes de fecha predefinidas</a>
+       que pueden usarse en su lugar, así por ejemplo <strong><code>DATE_RSS</code></strong>
+       contiene la cadena de formato <code class="literal">'D, d M Y H:i:s'</code>.
+      </p>
+      <table class="doctable table">
+        <caption><strong>Los siguientes caracteres están reconocidos en el
+         parámetro de cadena <code class="parameter">format</code></strong></caption>
+        
+         <thead>
+          <tr>
+           <th>Carácter de <code class="parameter">format</code></th>
+           <th>Descripción</th>
+           <th>Ejemplo de valores devueltos</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Día</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">d</code></td>
+           <td>Día del mes, 2 dígitos con ceros iniciales</td>
+           <td><code class="literal">01</code> a <code class="literal">31</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">D</code></td>
+           <td>Una representación textual de un día, tres letras</td>
+           <td><code class="literal">Mon</code> hasta <code class="literal">Sun</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">j</code></td>
+           <td>Día del mes sin ceros iniciales</td>
+           <td><code class="literal">1</code> a <code class="literal">31</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">l</code> ('L' minúscula)</td>
+           <td>Una representación textual completa del día de la semana</td>
+           <td><code class="literal">Sunday</code> hasta <code class="literal">Saturday</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">N</code></td>
+           <td>Representación numérica ISO-8601 del día de la semana (añadido en
+            PHP 5.1.0)</td>
+           <td><code class="literal">1</code> (para lunes) hasta <code class="literal">7</code> (para domingo)</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">S</code></td>
+           <td>Sufijo ordinal inglés para el día del mes, 2 caracteres</td>
+           <td>
+            <code class="literal">st</code>, <code class="literal">nd</code>, <code class="literal">rd</code> o
+            <code class="literal">th</code>. Funciona bien con <code class="literal">j</code>
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">w</code></td>
+           <td>Representación numérica del día de la semana</td>
+           <td><code class="literal">0</code> (para domingo) hasta <code class="literal">6</code> (para sábado)</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">z</code></td>
+           <td>El día del año (comenzando por 0)</td>
+           <td><code class="literal">0</code> hasta <code class="literal">365</code></td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Semana</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">W</code></td>
+           <td>Número de la semana del año ISO-8601, las semanas comienzan en lunes</td>
+           <td>Ejemplo: <code class="literal">42</code> (la 42ª semana del año)</td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Mes</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">F</code></td>
+           <td>Una representación textual completa de un mes, como January o March</td>
+           <td><code class="literal">January</code> hasta <code class="literal">December</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">m</code></td>
+           <td>Representación numérica de un mes, con ceros iniciales</td>
+           <td><code class="literal">01</code> hasta <code class="literal">12</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">M</code></td>
+           <td>Una representación textual corta de un mes, tres letras</td>
+           <td><code class="literal">Jan</code> hasta <code class="literal">Dec</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">n</code></td>
+           <td>Representación numérica de un mes, sin ceros iniciales</td>
+           <td><code class="literal">1</code> hasta <code class="literal">12</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">t</code></td>
+           <td>Número de días del mes dado</td>
+           <td><code class="literal">28</code> hasta <code class="literal">31</code></td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Año</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">L</code></td>
+           <td>Si es un año bisiesto</td>
+           <td><code class="literal">1</code> si es bisiesto, <code class="literal">0</code> si no.</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">o</code></td>
+           <td>Año según el número de la semana ISO-8601. Esto tiene el mismo valor que
+            <code class="literal">Y</code>, excepto que si el número de la semana ISO
+            (<code class="literal">W</code>) pertenece al año anterior o siguiente, se usa
+            ese año en su lugar. (añadido en PHP 5.1.0)</td>
+           <td>Ejemplos: <code class="literal">1999</code> o <code class="literal">2003</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">Y</code></td>
+           <td>Una representación numérica completa de un año, 4 dígitos</td>
+           <td>Ejemplos: <code class="literal">1999</code> o <code class="literal">2003</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">y</code></td>
+           <td>Una representación de dos dígitos de un año</td>
+           <td>Ejemplos: <code class="literal">99</code> o <code class="literal">03</code></td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Hora</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">a</code></td>
+           <td>Ante meridiem y Post meridiem en minúsculas</td>
+           <td><code class="literal">am</code> o <code class="literal">pm</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">A</code></td>
+           <td>Ante meridiem y Post meridiem en mayúsculas</td>
+           <td><code class="literal">AM</code> o <code class="literal">PM</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">B</code></td>
+           <td>Hora Internet</td>
+           <td><code class="literal">000</code> hasta <code class="literal">999</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">g</code></td>
+           <td>Formato de 12 horas de una hora sin ceros iniciales</td>
+           <td><code class="literal">1</code> hasta <code class="literal">12</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">G</code></td>
+           <td>Formato de 24 horas de una hora sin ceros iniciales</td>
+           <td><code class="literal">0</code> hasta <code class="literal">23</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">h</code></td>
+           <td>Formato de 12 horas de una hora con ceros iniciales</td>
+           <td><code class="literal">01</code> hasta <code class="literal">12</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">H</code></td>
+           <td>Formato de 24 horas de una hora con ceros iniciales</td>
+           <td><code class="literal">00</code> hasta <code class="literal">23</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">i</code></td>
+           <td>Minutos con ceros iniciales</td>
+           <td><code class="literal">00</code> hasta <code class="literal">59</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">s</code></td>
+           <td>Segundos con ceros iniciales</td>
+           <td><code class="literal">00</code> hasta <code class="literal">59</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">u</code></td>
+           <td>
+            Microsegundos (añadido en PHP 5.2.2). Observe que
+            <span class="function"><strong>date()</strong></span> siempre generará
+            <code class="literal">000000</code> ya que toma un parámetro de tipo
+            <span class="type">integer</span>, mientras que <span class="methodname"><a href="https://www.php.net/manual/es/datetime.format.php" class="methodname">DateTime::format()</a></span>
+            admite microsegundos si <span class="classname"><a href="https://www.php.net/manual/es/class.datetime.php" class="classname">DateTime</a></span> fue
+            creado con microsegundos.
+           </td>
+           <td>Ejemplo: <code class="literal">654321</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">v</code></td>
+           <td>
+            Milisegundos (añadido en PHP 7.0.0). La misma observación se aplica para
+            <code class="literal">u</code>.
+           </td>
+           <td>Example: <code class="literal">654</code></td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Zona Horaria</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">e</code></td>
+           <td>Identificador de zona horaria (añadido en PHP 5.1.0)</td>
+           <td>Ejemplos: <code class="literal">UTC</code>, <code class="literal">GMT</code>, <code class="literal">Atlantic/Azores</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">I</code> (i mayúscula)</td>
+           <td>Si la fecha está en horario de verano o no</td>
+           <td><code class="literal">1</code> si está en horario de verano, <code class="literal">0</code> si no.</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">O</code></td>
+           <td>Diferencia de la hora de Greenwich (GMT) sin colon entre horas y minutos</td>
+           <td>Ejemplo: <code class="literal">+0200</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">P</code></td>
+           <td>Diferencia con la hora de Greenwich (GMT) con dos puntos entre horas y minutos
+            (añadido en PHP 5.1.3)</td>
+           <td>Ejemplo: <code class="literal">+02:00</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">T</code></td>
+           <td>Abreviatura de la zona horaria</td>
+           <td>Ejemplos: <code class="literal">EST</code>, <code class="literal">MDT</code> ...</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">Z</code></td>
+           <td>Índice de la zona horaria en segundos. El índice para zonas horarias al oeste de UTC
+            siempre es negativo, y para aquellas al este de UTC es siempre positivo.</td>
+           <td><code class="literal">-43200</code> hasta <code class="literal">50400</code></td>
+          </tr>
+
+          <tr>
+           <td style="text-align: center;"><em class="emphasis">Fecha/Hora Completa</em></td>
+           <td>---</td>
+           <td>---</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">c</code></td>
+           <td>Fecha ISO 8601 (añadido en PHP 5)</td>
+           <td>2004-02-12T15:19:21+00:00</td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">r</code></td>
+           <td>Fecha con formato <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">»&nbsp;RFC 2822</a></td>
+           <td>Ejemplo: <code class="literal">Thu, 21 Dec 2000 16:01:07 +0200</code></td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">U</code></td>
+           <td>Segundos desde la Época Unix (1 de Enero del 1970 00:00:00 GMT)</td>
+           <td>Vea también <span class="function"><a href="https://www.php.net/manual/es/function.time.php" class="function">time()</a></span></td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      
+      <p class="para">
+       Los caracteres no reconocidos en la cadena de formato serán impresos
+       tal cual. El formato <code class="literal">Z</code> siempre devolverá
+       <code class="literal">0</code> cuando se usa <span class="function"><a href="https://www.php.net/manual/es/function.gmdate.php" class="function">gmdate()</a></span>.
+      </p>       
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       </p><p class="para">
+        Ya que esta función sólo acepta marcas de tiempo de tipo <span class="type">integer</span> el
+        carácter de formato <code class="literal">u</code> sólo es útil cuando se usa la
+        función <span class="function"><a href="https://www.php.net/manual/es/function.date-format.php" class="function">date_format()</a></span> con marcas de tiempo basadas en usuario
+        creadas con <span class="function"><a href="https://www.php.net/manual/es/function.date-create.php" class="function">date_create()</a></span>.
+       </p>
+      </blockquote>
+     </dd>
+
+    
+    
+    
+<dt>
+<code class="parameter">timestamp</code></dt>
+<dd>
+<p class="para">
+ El parámetro opcional <code class="parameter">timestamp</code> es una marca temporal de Unix de tipo
+ <span class="type">integer</span> que por defecto es la hora local si no se proporciona
+ ningún valor a <code class="parameter">timestamp</code>. En otras palabras,
+ es de forma predeterminada el valor de la función <span class="function"><a href="https://www.php.net/manual/es/function.time.php" class="function">time()</a></span>.
+ </p></dd>
+
+    
+   </dl>
+
+  
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.date-returnvalues">
+  <h3 class="title">Valores devueltos<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-returnvalues"> ¶</a></h3>
+  <p class="para">
+   Devuelve una cadena de fecha formateada. Si se usa un valor no numérico para
+   <code class="parameter">timestamp</code>, se devuelve <strong><code>false</code></strong> y
+   se emite un error de nivel <strong><code>E_WARNING</code></strong>.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 errors" id="refsect1-function.date-errors">
+  <h3 class="title">Errores/Excepciones<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-errors"> ¶</a></h3>
+  
+  <p class="para">
+Cada vez que se llame a una función de fecha/hora se generará un <strong><code>E_NOTICE</code></strong>
+si la zona horaria no es válida, y/o un mensaje <strong><code>E_STRICT</code></strong>
+o <strong><code>E_WARNING</code></strong>
+si se emplea la configuración del sistema o la variable global
+<var class="varname">TZ</var>. Véase también <span class="function"><a href="https://www.php.net/manual/es/function.date-default-timezone-set.php" class="function">date_default_timezone_set()</a></span></p>
+  
+ </div>
+
+ 
+ <div class="refsect1 changelog" id="refsect1-function.date-changelog">
+  <h3 class="title">Historial de cambios<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-changelog"> ¶</a></h3>
+  <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versión</th>
+       <th>Descripción</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+     <tr>
+       <td>5.1.1</td>
+       <td>
+        Hay <a href="https://www.php.net/manual/es/datetime.constants.php" class="link">constantes</a> útiles 
+        de los formatos estándar de fecha/hora que pueden utilizarse para especificar 
+        el parámetro <code class="parameter">format</code>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.1.0</td>
+       <td>
+        El rango válido de una marca de tiempo es típicamente desde Fri, 13 Dec
+        1901 20:45:54 GMT a Tue, 19 Jan 2038 03:14:07 GMT. (Estas son
+        las fechas que corresponden a los valores mínimo y máximo de
+        un entero con signo de 32 bit). Sin embargo, antes de PHP 5.1.0 este rango estaba limitado
+        desde 01-01-1970 a 19-01-2038 en algunos sistemas (p.ej. Windows).
+       </td>
+      </tr>
+
+      
+      <tr><td>5.1.0</td><td><p class="para">
+Ahora muestra un error <strong><code>E_STRICT</code></strong> y <strong><code>E_NOTICE</code></strong>
+cuando ocurren errores con zonas horarias.</p></td></tr>
+
+     </tbody>
+    
+   </table>
+
+  
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-function.date-examples">
+  <h3 class="title">Ejemplos<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-examples"> ¶</a></h3>
+  <div class="example" id="example-2067">
+    <p><strong>Ejemplo #1 Ejemplo de <span class="function"><strong>date()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: rgb(0, 0, 0); --darkreader-inline-color:#edebe8;" data-darkreader-inline-color="">
+<span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">&lt;?php<br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Establecer&nbsp;la&nbsp;zona&nbsp;horaria&nbsp;predeterminada&nbsp;a&nbsp;usar.&nbsp;Disponible&nbsp;desde&nbsp;PHP&nbsp;5.1<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date_default_timezone_set</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'UTC'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br><br><br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Imprime&nbsp;algo&nbsp;como:&nbsp;Monday<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"l"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br><br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Imprime&nbsp;algo&nbsp;como:&nbsp;Monday&nbsp;8th&nbsp;of&nbsp;August&nbsp;2005&nbsp;03:12:46&nbsp;PM<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'l&nbsp;jS&nbsp;\of&nbsp;F&nbsp;Y&nbsp;h:i:s&nbsp;A'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br><br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Imprime:&nbsp;July&nbsp;1,&nbsp;2000&nbsp;is&nbsp;on&nbsp;a&nbsp;Saturday<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"July&nbsp;1,&nbsp;2000&nbsp;is&nbsp;on&nbsp;a&nbsp;"&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">.&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"l"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">mktime</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">7</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">1</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">2000</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">));<br><br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">/*&nbsp;Usar&nbsp;las&nbsp;constantes&nbsp;en&nbsp;el&nbsp;parámetro&nbsp;de&nbsp;formato&nbsp;*/<br>//&nbsp;Imprime&nbsp;algo&nbsp;como:&nbsp;Wed,&nbsp;25&nbsp;Sep&nbsp;2013&nbsp;15:28:57&nbsp;-0700<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">DATE_RFC2822</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br><br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Imprime&nbsp;algo&nbsp;como:&nbsp;2000-07-01T00:00:00+00:00<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">DATE_ATOM</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">mktime</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">7</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">1</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">2000</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">));<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+  <p class="para">
+   Puede prevenir que un carácter reconocido en la cadena de formato sea
+   expandido escapándolo con una barra invertida precedente. Si el carácter con una
+   barra invertida es ya una secuencia especial, necesitará escapar también
+   la barra invertida.
+   </p><div class="example" id="example-2068">
+    <p><strong>Ejemplo #2 Escapar caracteres en <span class="function"><strong>date()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: rgb(0, 0, 0); --darkreader-inline-color:#edebe8;" data-darkreader-inline-color="">
+<span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">&lt;?php<br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;imprime&nbsp;algo&nbsp;como:&nbsp;Wednesday&nbsp;the&nbsp;15th<br></span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">echo&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'l&nbsp;\t\h\e&nbsp;jS'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+  <p class="para">
+   Es posible usar <span class="function"><strong>date()</strong></span> y
+   <span class="function"><a href="https://www.php.net/manual/es/function.mktime.php" class="function">mktime()</a></span> juntos para buscar fechas en el futuro
+   o en el pasado.
+   </p><div class="example" id="example-2069">
+    <p><strong>Ejemplo #3 Ejemplo de <span class="function"><strong>date()</strong></span> y <span class="function"><a href="https://www.php.net/manual/es/function.mktime.php" class="function">mktime()</a></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: rgb(0, 0, 0); --darkreader-inline-color:#edebe8;" data-darkreader-inline-color="">
+<span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">&lt;?php<br>$mañana&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">mktime</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"m"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">)&nbsp;&nbsp;,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"d"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">)+</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">1</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"Y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">));<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$mes_anterior&nbsp;&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">mktime</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"m"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">)-</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">1</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"d"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">),&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"Y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">));<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$año_siguiente&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">mktime</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">0</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">,&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"m"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">),&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"d"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">),&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"Y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">)+</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">1</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    </p><p class="para">
+     Esto puede ser más fiable que añadir o sustraer simplemente el número
+     de segundos de un día o mes a una marca de tiempo debido al horario de
+     verano.
+    </p>
+   </blockquote>
+  
+  <p class="para">
+   Algunos ejemplos de formatear <span class="function"><strong>date()</strong></span>. Observe que
+   debería escapar cualesquiera otros caracteres, ya que cualquiera que tenga
+   actualmente un significado especial producirá resultados no deseados, y
+   a otros caracteres se les pueden asignar significado en futuras versiones de PHP.
+   Cuando se escapa un carácter, asegúrese de usar comillas simples para prevenir que
+   caracteres como \n se conviertan en nuevas líneas.
+   </p><div class="example" id="example-2070">
+    <p><strong>Ejemplo #4 <span class="function"><strong>date()</strong></span> Formatting</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: rgb(0, 0, 0); --darkreader-inline-color:#edebe8;" data-darkreader-inline-color="">
+<span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">&lt;?php<br></span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Se&nbsp;asume&nbsp;que&nbsp;hoy&nbsp;es&nbsp;March&nbsp;10th,&nbsp;2001,&nbsp;5:16:18&nbsp;pm,&nbsp;y&nbsp;que&nbsp;estamos&nbsp;en&nbsp;la<br>//&nbsp;zona&nbsp;horaria&nbsp;Mountain&nbsp;Standard&nbsp;Time&nbsp;(MST)<br><br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"F&nbsp;j,&nbsp;Y,&nbsp;g:i&nbsp;a"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;March&nbsp;10,&nbsp;2001,&nbsp;5:16&nbsp;pm<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"m.d.y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;03.10.01<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"j,&nbsp;n,&nbsp;Y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;10,&nbsp;3,&nbsp;2001<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"Ymd"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;20010310<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'h-i-s,&nbsp;j-m-y,&nbsp;it&nbsp;is&nbsp;w&nbsp;Day'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;05-16-18,&nbsp;10-03-01,&nbsp;1631&nbsp;1618&nbsp;6&nbsp;Satpm01<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'\i\t&nbsp;\i\s&nbsp;\t\h\e&nbsp;jS&nbsp;\d\a\y.'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;it&nbsp;is&nbsp;the&nbsp;10th&nbsp;day.<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"D&nbsp;M&nbsp;j&nbsp;G:i:s&nbsp;T&nbsp;Y"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;Sat&nbsp;Mar&nbsp;10&nbsp;17:16:18&nbsp;MST&nbsp;2001<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">'H:m:s&nbsp;\m&nbsp;\i\s\&nbsp;\m\o\n\t\h'</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;17:03:18&nbsp;m&nbsp;is&nbsp;month<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"H:i:s"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;17:16:18<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">$hoy&nbsp;</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">=&nbsp;</span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">date</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">(</span><span style="color: rgb(221, 0, 0); --darkreader-inline-color:#ff2d2d;" data-darkreader-inline-color="">"Y-m-d&nbsp;H:i:s"</span><span style="color: rgb(0, 119, 0); --darkreader-inline-color:#79ff79;" data-darkreader-inline-color="">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(255, 128, 0); --darkreader-inline-color:#ff8e15;" data-darkreader-inline-color="">//&nbsp;2001-03-10&nbsp;17:16:18&nbsp;(el&nbsp;formato&nbsp;DATETIME&nbsp;de&nbsp;MySQL)<br></span><span style="color: rgb(0, 0, 187); --darkreader-inline-color:#5a98ff;" data-darkreader-inline-color="">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  
+  <p class="para">
+   Para formatear fechas en otros lenguajes debería usar las
+   funciones <span class="function"><a href="https://www.php.net/manual/es/function.setlocale.php" class="function">setlocale()</a></span> y <span class="function"><a href="https://www.php.net/manual/es/function.strftime.php" class="function">strftime()</a></span>
+   en vez de <span class="function"><strong>date()</strong></span>.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 notes" id="refsect1-function.date-notes">
+  <h3 class="title">Notas<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-notes"> ¶</a></h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   </p><p class="para">
+    Para generar una marca de tiempo desde una cadena que representa la fecha,
+    puede usar <span class="function"><a href="https://www.php.net/manual/es/function.strtotime.php" class="function">strtotime()</a></span>. Adicionalmente, algunas
+    bases de datos tienen funciones para convertir formatos de fecha en marcas de tiempo
+    (como la función <a href="http://dev.mysql.com/doc/mysql/en/date-and-time-functions.html" class="link external">»&nbsp;UNIX_TIMESTAMP</a>
+    de MySQL).
+   </p>
+  </blockquote>
+  <div class="tip"><strong class="tip">Sugerencia</strong>
+   <p class="para">
+    La marca de tiempo del inicio de una petición está disponible en
+    <var class="varname"><a href="https://www.php.net/manual/es/reserved.variables.server.php" class="classname">$_SERVER['REQUEST_TIME']</a></var> desde PHP 5.1.
+   </p>
+  </div>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.date-seealso">
+  <h3 class="title">Ver también<a class="genanchor" href="https://www.php.net/manual/es/function.date.php#refsect1-function.date-seealso"> ¶</a></h3>
+  <ul class="simplelist">
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.gmdate.php" class="function" rel="rdfs-seeAlso">gmdate()</a> - Formatea una fecha/hora GMT/UTC</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.idate.php" class="function" rel="rdfs-seeAlso">idate()</a> - Formatea una fecha/hora local como un entero</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.getdate.php" class="function" rel="rdfs-seeAlso">getdate()</a> - Obtener información de la fecha/hora</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.getlastmod.php" class="function" rel="rdfs-seeAlso">getlastmod()</a> - Obtiene la hora de la última modificación de la
+  página</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.mktime.php" class="function" rel="rdfs-seeAlso">mktime()</a> - Obtener la marca de tiempo Unix de una fecha</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.strftime.php" class="function" rel="rdfs-seeAlso">strftime()</a> - Formatea una fecha/hora local según una configuración local</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.time.php" class="function" rel="rdfs-seeAlso">time()</a> - Devuelve la fecha Unix actual</span></li>
+    <li class="member"><span class="function"><a href="https://www.php.net/manual/es/function.strtotime.php" class="function" rel="rdfs-seeAlso">strtotime()</a> - Convierte una descripción de fecha/hora textual en Inglés a una fecha Unix</span></li>
+    <li class="member"><a href="https://www.php.net/manual/es/class.datetimeinterface.php#datetime.constants.types" class="link">Constantes Predefinidas de DateTime</a></li>
+   </ul>
+  
+ </div>
+
+</div><section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="https://www.php.net/manual/add-note.php?sect=function.date&amp;redirect=https://www.php.net/manual/es/function.date.php">＋<small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes </h3>
+ </div>
+ <div class="note">There are no user contributed notes for this page.</div></section>    </section><!-- layout-content -->
+        <aside class="layout-menu">
+
+        <ul class="parent-menu-list">
+                                    <li>
+                <a href="https://www.php.net/manual/es/ref.datetime.php">Funciones de Fecha/Hora</a>
+
+                                    <ul class="child-menu-list">
+
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.checkdate.php" title="checkdate">checkdate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-add.php" title="date_​add">date_​add</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-create-from-format.php" title="date_​create_​from_​format">date_​create_​from_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-create-immutable-from-format.php" title="date_​create_​immutable_​from_​format">date_​create_​immutable_​from_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-create-immutable.php" title="date_​create_​immutable">date_​create_​immutable</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-create.php" title="date_​create">date_​create</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-date-set.php" title="date_​date_​set">date_​date_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-default-timezone-get.php" title="date_​default_​timezone_​get">date_​default_​timezone_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-default-timezone-set.php" title="date_​default_​timezone_​set">date_​default_​timezone_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-diff.php" title="date_​diff">date_​diff</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-format.php" title="date_​format">date_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-get-last-errors.php" title="date_​get_​last_​errors">date_​get_​last_​errors</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-interval-create-from-date-string.php" title="date_​interval_​create_​from_​date_​string">date_​interval_​create_​from_​date_​string</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-interval-format.php" title="date_​interval_​format">date_​interval_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-isodate-set.php" title="date_​isodate_​set">date_​isodate_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-modify.php" title="date_​modify">date_​modify</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-offset-get.php" title="date_​offset_​get">date_​offset_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-parse-from-format.php" title="date_​parse_​from_​format">date_​parse_​from_​format</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-parse.php" title="date_​parse">date_​parse</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-sub.php" title="date_​sub">date_​sub</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-sun-info.php" title="date_​sun_​info">date_​sun_​info</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-sunrise.php" title="date_​sunrise">date_​sunrise</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-sunset.php" title="date_​sunset">date_​sunset</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-time-set.php" title="date_​time_​set">date_​time_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-timestamp-get.php" title="date_​timestamp_​get">date_​timestamp_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-timestamp-set.php" title="date_​timestamp_​set">date_​timestamp_​set</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-timezone-get.php" title="date_​timezone_​get">date_​timezone_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.date-timezone-set.php" title="date_​timezone_​set">date_​timezone_​set</a>
+                        </li>
+                                                <li class="current">
+                            <a href="https://www.php.net/manual/es/function.date.php" title="date">date</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.getdate.php" title="getdate">getdate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.gettimeofday.php" title="gettimeofday">gettimeofday</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.gmdate.php" title="gmdate">gmdate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.gmmktime.php" title="gmmktime">gmmktime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.gmstrftime.php" title="gmstrftime">gmstrftime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.idate.php" title="idate">idate</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.localtime.php" title="localtime">localtime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.microtime.php" title="microtime">microtime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.mktime.php" title="mktime">mktime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.strftime.php" title="strftime">strftime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.strptime.php" title="strptime">strptime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.strtotime.php" title="strtotime">strtotime</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.time.php" title="time">time</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-abbreviations-list.php" title="timezone_​abbreviations_​list">timezone_​abbreviations_​list</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-identifiers-list.php" title="timezone_​identifiers_​list">timezone_​identifiers_​list</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-location-get.php" title="timezone_​location_​get">timezone_​location_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-name-from-abbr.php" title="timezone_​name_​from_​abbr">timezone_​name_​from_​abbr</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-name-get.php" title="timezone_​name_​get">timezone_​name_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-offset-get.php" title="timezone_​offset_​get">timezone_​offset_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-open.php" title="timezone_​open">timezone_​open</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-transitions-get.php" title="timezone_​transitions_​get">timezone_​transitions_​get</a>
+                        </li>
+                                                <li class="">
+                            <a href="https://www.php.net/manual/es/function.timezone-version-get.php" title="timezone_​version_​get">timezone_​version_​get</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="https://www.php.net/copyright.php">Copyright © 2001-2022 The PHP Group</a></li>
+        <li><a href="https://www.php.net/my.php">My PHP.net</a></li>
+        <li><a href="https://www.php.net/contact.php">Contact</a></li>
+        <li><a href="https://www.php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="https://www.php.net/privacy.php">Privacy policy</a></li>
+        <li><a href="https://github.com/php/web-php/blob/master/manual%2Fes%2Ffunction.date.php">View Source</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="./Funciones Date_files/jquery-3.6.0.min.js.descarga" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./Funciones Date_files/cached(4).php"></script>
+<script src="./Funciones Date_files/cached(5).php"></script>
+<script src="./Funciones Date_files/cached(6).php"></script>
+<script src="./Funciones Date_files/cached(7).php"></script>
+<script src="./Funciones Date_files/cached(8).php"></script>
+<script src="./Funciones Date_files/cached(9).php"></script>
+
+<a id="toTop" href="javascript:;" style="display: inline;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="./Funciones Date_files/to-top@2x.png"></a>
+
+
+
+</body><app-content ng-version="14.2.0"></app-content></html>
