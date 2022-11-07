@@ -1,3 +1,4 @@
+/*NOMALIZE*/
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -6,8 +7,9 @@
 
 body {
   height: 100vh;
-  width: 100vw;
 }
+
+/*DIV PRICIPALES PÁGINA*/
 
 .container {
   text-align: center;
@@ -15,9 +17,7 @@ body {
   margin: 50px auto;
 }
 
-.container > h1 {
-  margin-bottom: 25px;
-}
+/*BOTÓN*/
 
 .boton {
   padding: 15px 25px;
@@ -30,14 +30,18 @@ body {
   display: inline-block;
 }
 
-.remove {
-  padding: 25px 35px;
-  background-color: red;
-  font-size: 1rem;
+/*FORMULARIO*/
+
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 40vw;
+  margin: 50px auto;
 }
 
 input[type="text"],
-select{
+select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -59,22 +63,4 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
-}
-
-.form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  width: 40vw;
-  margin: 50px auto;
-}
-
-.noticias > div {
-  background-color: #f2f2f2;
-  border: 1px solid black;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 0px black;
-  margin: 30px auto;
-  padding: 20px;
-  width: 40vw;
 }
