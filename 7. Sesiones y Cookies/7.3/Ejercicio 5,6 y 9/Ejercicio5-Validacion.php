@@ -30,7 +30,7 @@
     }
 
     //Se elimina el producto de las cookies y elimina la entrada del carrito
-    else if (isset($_GET['nombreBaja'])) {
+    if (isset($_GET['nombreBaja'])) {
         $arrayProductos = unserialize(base64_decode($_COOKIE['productos']));
         $arrayTemporal = array();
         $arrayTemporal2 = array();
@@ -55,7 +55,8 @@
 
         header('Location: ./Ejercicio5.php');
     }
-    else if (isset($_GET['nombreMod'])){
+
+    if (isset($_GET['nombreMod'])){
         //Formulario para introducir los nuevos datos del producto
         echo '<form action="./Ejercicio5-Validacion.php">
             <label for="">Introduce el nombre del producto</label>
