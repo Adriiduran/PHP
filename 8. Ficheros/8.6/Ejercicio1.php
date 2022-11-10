@@ -34,7 +34,8 @@
         $contieneFecha = 0;
 
         foreach(file("mascotas.txt") as $line) {
-            if ($line == $fecha."\n") {
+            trim($line);
+            if ($line == $fecha) {
                 $contieneFecha = 1;
             }
         }

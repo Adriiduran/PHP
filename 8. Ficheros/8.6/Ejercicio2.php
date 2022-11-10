@@ -19,6 +19,7 @@
     if (isset($_GET['fecha'])) {
         $fecha = $_GET['fecha'];
         $obtener = false;
+        $_SESSION['sesion'] = array();
 
         foreach (file("mascotas.txt") as $line) {
             $line = trim($line);
