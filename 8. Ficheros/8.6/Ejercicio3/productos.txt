@@ -1,0 +1,4 @@
+teclado,11,https://m.media-amazon.com/images/I/611qnhkkDUL._AC_SY355_.jpg, Descripcion personalizada para el teclado
+monitor,80,https://www.lg.com/es/images/monitores/MD06025876/gallery/medium03.jpg, Descripcion personalizada para el monitor
+joystick,33,https://img.joomcdn.net/4eb3b339902f374dd9f4bba09ca63d912d122311_original.jpeg, Descripcion personalizada para el joystickraton,6,https://m.media-amazon.com/images/I/718VRyryjVS._AC_SS450_.jpg,Descripcion personalizada para el raton
+raton,6,https://m.media-amazon.com/images/I/718VRyryjVS._AC_SS450_.jpg,Descripcion personalizada para el raton
