@@ -79,7 +79,7 @@
         ';
 
         foreach ($arrayCoches as $key => $value) {
-            echo '<><td>'.$key.'</td>';
+            echo '<td>'.$key.'</td>';
 
             for ($i=0; $i < count($value); $i++) { 
                 echo '<td>'.date('l - d/m/Y', $value[$i][0]).'</td>';
