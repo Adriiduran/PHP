@@ -25,12 +25,14 @@ if (!isset($_COOKIE['carrito'])) {
     $_SESSION['carrito'] = unserialize(base64_decode($_COOKIE['carrito']));
 }
 
+//Elimina una unidad del carrito del producto seleccionado
 if (isset($_GET['eliminar'])) {
     $_SESSION['carrito'][$_GET['eliminar']][1]--;
 
     setcookie('carrito', base64_encode(serialize($_SESSION['carrito'])), time() + (3600 * 24), "/");
 }
 
+//Vacía el carrito por completo
 if (isset($_GET['vaciar'])) {
     for ($i=0; $i < count($_SESSION['carrito']); $i++) { 
         $_SESSION['carrito'][$i][1] = 0;

@@ -69,7 +69,7 @@
         $sesionCoches = array();
     }
 
-    print_r($sesionCoches);
+    // print_r($sesionCoches);
     ?>
 
     <form action="#">

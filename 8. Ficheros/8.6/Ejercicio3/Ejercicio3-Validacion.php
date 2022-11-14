@@ -26,6 +26,7 @@
     }
 
     if (isset($_GET['accion'])) {
+        //Muestra un formulario para añadir nuevos productos
         if ($_GET['accion'] == 'añadir') {
             echo '<form action="#">
                 <label>Nombre del producto</label>
@@ -39,12 +40,14 @@
                 <input type="submit" value="Añadir">
                 </form>';
         } else {
+            //Muestra todos los productos para poder seleccionar cual borrar
             for ($i = 0; $i < count($_SESSION['productos']); $i++) {
                 echo '<p>' . $_SESSION['productos'][$i][0] . '</p><a href="./Ejercicio3-Validacion.php?eliminar=' . $_SESSION['productos'][$i][0] . '">Eliminar</a>';
             }
         }
     }
 
+    //Si se añade nuevo producto se guarda en el fichero de productos 
     if (isset($_GET['nombre'])) {
         $archivo = fopen('productos.txt', 'a+');
         fwrite($archivo, $_GET['nombre'] . ',' . $_GET['precio'] . ',' . $_GET['img'] . ',' . $_GET['desc'] . "\n");
@@ -52,6 +55,7 @@
         header('Location: ./Ejercicio3.php?productoNuevo=');
     }
 
+    //Si se elimina un producto se elimina del fichero productos
     if (isset($_GET['eliminar'])) {
         $eliminar = $_GET['eliminar'];
 

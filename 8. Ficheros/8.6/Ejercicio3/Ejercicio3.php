@@ -55,6 +55,7 @@ if (isset($_GET['eliminar'])) {
     header('Refresh: 0 url=./Ejercicio3.php');
 }
 
+//Función que comprueba la cantidad de elementos que hay en el carrito
 function cantidadCarrito()
 {
     $cantidad = 0;

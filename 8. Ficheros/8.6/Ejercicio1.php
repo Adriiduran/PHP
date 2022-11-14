@@ -30,6 +30,7 @@
         array_push($_SESSION['sesion']['' . $nombre . ''], array($tipo, $edad));
     }
 
+    //Comprueba si existe la fecha en el archivo, si no la crea y graba las mascotas
     if (isset($_GET['grabar'])) {
         $contieneFecha = 0;
 
@@ -39,8 +40,6 @@
                 $contieneFecha = 1;
             }
         }
-
-        echo $contieneFecha;
 
         $archivo = fopen('./mascotas.txt', 'a+');
 
@@ -56,8 +55,6 @@
 
         $_SESSION['sesion'] = [];
     }
-
-    print_r($_SESSION['sesion']);
 
     //Muestra la tabla con las mascotas añadidas
     echo '<table border="1">';

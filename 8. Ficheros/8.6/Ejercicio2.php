@@ -16,6 +16,7 @@
         $_SESSION['sesion'] = [];
     }
 
+    //Carga el contenido seleccionado del fichero en el array de sesion
     if (isset($_GET['fecha'])) {
         $fecha = $_GET['fecha'];
         $obtener = false;
@@ -39,19 +40,6 @@
         }
     }
 
-    print_r($_SESSION['sesion']);
-
-    if ($_SESSION['sesion'] != []) {
-        echo '<table border="1">';
-        echo '<tr><th>Nombre</th><th>Tipo</th><th>Edad</th></tr>';
-        foreach ($_SESSION['sesion'] as $key => $value) {
-            echo '<tr>';
-            echo '<td>' . $key . '</td><td>' . $value[0][0] . '</td><td>' . $value[0][1] . '</td>';
-            echo '</tr>';
-        }
-        echo '</table>';
-    }
-
     echo '<h1>SELECTOR DE FECHAS</h1>';
 
     echo '<form action="#"><select name="fecha">';
@@ -65,6 +53,18 @@
 
     echo '<input type="submit" value="Listar">
     </form></select>';
+
+    //Muestra el array de sesión con formato tabla
+    if ($_SESSION['sesion'] != []) {
+        echo '<table border="1">';
+        echo '<tr><th>Nombre</th><th>Tipo</th><th>Edad</th></tr>';
+        foreach ($_SESSION['sesion'] as $key => $value) {
+            echo '<tr>';
+            echo '<td>' . $key . '</td><td>' . $value[0][0] . '</td><td>' . $value[0][1] . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
     ?>
 </body>
 
