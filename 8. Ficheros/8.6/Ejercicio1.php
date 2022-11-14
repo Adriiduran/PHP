@@ -32,18 +32,17 @@
 
     //Comprueba si existe la fecha en el archivo, si no la crea y graba las mascotas
     if (isset($_GET['grabar'])) {
-        $contieneFecha = 0;
+        $contieneFecha = false;
 
         foreach(file("mascotas.txt") as $line) {
-            trim($line);
-            if ($line == $fecha) {
-                $contieneFecha = 1;
+            if (trim($line) == $fecha) {
+                $contieneFecha = true;
             }
         }
 
         $archivo = fopen('./mascotas.txt', 'a+');
 
-        if ($contieneFecha == 0) {
+        if ($contieneFecha == false) {
             fwrite($archivo, $fecha."\n");
         }
 
