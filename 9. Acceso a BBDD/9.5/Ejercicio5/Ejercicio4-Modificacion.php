@@ -1,3 +1,15 @@
+<?php
+function comprobarClave($codigo, $conexion)
+{
+    $sql = $conexion->query("select count(codigo) as cuenta from productos where codigo ='$codigo'");
+
+    if ($sql->fetchObject()->cuenta == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +39,16 @@
         $precioCompra = $_GET['newPC'];
         $precioVenta = $_GET['newPV'];
         $stock = $_GET['newStock'];
-        $sql = "insert into productos (codigo, descripcion, precioCompra, precioVenta, stock) values ('" . $codigo . "','" . $descripcion . "','" . $precioCompra . "','" . $precioVenta . "','" . $stock . "')";
 
-        $conexion->exec($sql);
+        if (comprobarClave($codigo, $conexion) == false) {
+            $sql = "insert into productos (codigo, descripcion, precioCompra, precioVenta, stock) values ('" . $codigo . "','" . $descripcion . "','" . $precioCompra . "','" . $precioVenta . "','" . $stock . "')";
 
-        header('Location:./Ejercicio4.php');
+            $conexion->exec($sql);
+            header('Location:./Ejercicio4.php');
+        } else {
+            echo 'La clave introducida ya existe en la BBDD introduce un clave diferente';
+            header('Refresh: 2 url=./Ejercicio4.php');
+        }
     }
 
     //Modifica un registro existente de la BBDD
@@ -42,20 +59,31 @@
         $precioCompra = $_GET['modPC'];
         $precioVenta = $_GET['modPV'];
         $stock = $_GET['modStock'];
-        $sql = "UPDATE productos SET codigo='" . $codigo . "', descripcion='" . $descripcion . "', precioCompra=" . $precioCompra . ",precioVenta=" . $precioVenta . ", stock=" . $stock . " WHERE codigo='" . $oldCod . "'";
 
-        $conexion->exec($sql);
+        if (comprobarClave($codigo, $conexion) == false) {
+            $sql = "UPDATE productos SET codigo='" . $codigo . "', descripcion='" . $descripcion . "', precioCompra=" . $precioCompra . ",precioVenta=" . $precioVenta . ", stock=" . $stock . " WHERE codigo='" . $oldCod . "'";
 
-        header('Location:./Ejercicio4.php');
+            $conexion->exec($sql);
+            header('Location:./Ejercicio4.php');
+        } else {
+            echo 'La clave introducida ya existe en la BBDD introduce un clave diferente';
+            header('Refresh: 2 url=./Ejercicio4.php');
+        }
     }
 
     //Elimina un registro de la BBDD
     if (isset($_GET['eliminar'])) {
         $eliminar = $_GET['eliminar'];
-        $sql = "delete from productos where codigo='$eliminar'";
 
-        $conexion->exec($sql);
-        header('Location:./Ejercicio4.php');
+        if (comprobarClave($codigo, $conexion) == true) {
+            $sql = "delete from productos where codigo='$eliminar'";
+
+            $conexion->exec($sql);
+            header('Location:./Ejercicio4.php');
+        } else {
+            echo 'La clave introducida no existe en la BBDD introduce un clave diferente';
+            header('Refresh: 2 url=./Ejercicio4.php');
+        }
     }
 
     //Muestra formulario para la entrada/salida de mercancía
@@ -63,16 +91,15 @@
 
         if (isset($_GET['entrada'])) {
             $text = 'añadir';
-        }
-        else{
+        } else {
             $text = 'eliminar';
         }
     ?>
 
         <form action="./Ejercicio4-Modificacion.php">
-            <label for="">Introduce la cantidad de unidades que se van a <?= $text?> al stock</label>
-            <input type="number" name="<?=$text.'Stock'?>" required>
-            <input type="submit" value="<?=$text.'Stock'?>">
+            <label for="">Introduce la cantidad de unidades que se van a <?= $text ?> al stock</label>
+            <input type="number" name="<?= $text . 'Stock' ?>" required>
+            <input type="submit" value="<?= $text . 'Stock' ?>">
             <input type="hidden" name="codigo" value="<?= $_GET['codigo'] ?>">
             <input type="hidden" name="stock" value="<?= $_GET['stock'] ?>">
         </form>
@@ -88,7 +115,7 @@
 
         $cantidadFinal = $cantidad + $stock;
 
-        $conexion -> exec("update productos set stock=$cantidadFinal where codigo='$codigo'");
+        $conexion->exec("update productos set stock=$cantidadFinal where codigo='$codigo'");
         header("Location:Ejercicio4.php");
     }
 
@@ -98,14 +125,13 @@
         $cantidad = $_GET['eliminarStock'];
         $stock = $_GET['stock'];
 
-        if ($stock-$cantidad < 0) {
+        if ($stock - $cantidad < 0) {
             echo 'No se puede retirar una cantidad mayor a la del stock del producto';
             header('Refresh: 2 url=Ejercicio4.php');
-        }
-        else{
+        } else {
             $cantidadFinal = $stock - $cantidad;
 
-            $conexion -> exec("update productos set stock=$cantidadFinal where codigo='$codigo'");
+            $conexion->exec("update productos set stock=$cantidadFinal where codigo='$codigo'");
             header("Location:Ejercicio4.php");
         }
     }

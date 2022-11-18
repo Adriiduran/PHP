@@ -3,6 +3,10 @@ session_start();
 if (!isset($_SESSION['paginas'])) {
     $_SESSION ['paginas']=2;
 }
+
+if (!isset($_SESSION['compra'])) {
+    $_SESSION['compra'] = array();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +16,7 @@ if (!isset($_SESSION['paginas'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GESTISIMAL</title>
-    <link rel="stylesheet" href="Ejercicio4.css">
+    <link rel="stylesheet" href="./Ejercicio5.css">
 </head>
 
 <body>
@@ -63,7 +67,6 @@ if (!isset($_SESSION['paginas'])) {
                 <td><a href="./Ejercicio4-Modificacion.php?eliminar=<?= $registro->codigo?>">Eliminar</a></td>
                 <td><a href="./Ejercicio4-Modificacion.php?modificar=<?= $registro->codigo?>">Modificar</a></td>
                 <td><a href="./Ejercicio4-Modificacion.php?entrada=&codigo=<?= $registro->codigo?>&stock=<?=$registro->stock?>">Entrada</a></td>
-                <td><a href="./Ejercicio4-Modificacion.php?salida=&codigo=<?= $registro->codigo?>&stock=<?=$registro->stock?>">Salida</a></td>
             </tr>
         <?php
         }
@@ -97,6 +100,10 @@ if (!isset($_SESSION['paginas'])) {
         </form>
         </tr>
     </table>
+
+    <div class="container">
+        <a class="boton" href="Ejercicio5-Venta.php">COMPRA ARTÍCULOS</a>
+    </div>
 </body>
 
 </html>

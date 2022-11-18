@@ -22,3 +22,19 @@ table,th,td,tr{
 th,td{
     padding: 5px;
 }
+
+.container{
+    width: 30vh;
+    margin: 50px auto;
+}
+
+.boton{
+    text-decoration: none;
+    color: white;
+    background-color: lightskyblue;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: block;
+    text-align: center;
+}
