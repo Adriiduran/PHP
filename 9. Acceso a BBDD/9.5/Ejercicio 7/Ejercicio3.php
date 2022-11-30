@@ -100,7 +100,7 @@ function cantidadCarrito()
                 <th>Imagen</th>
                 <th><a href="./Ejercicio3-Carrito.php">Ir al carrito</a></th>
             </tr>
-            <?php
+            <?php 
             for ($i = 0; $i < count($_SESSION['productos']); $i++) {
                 echo '<tr>
                     <td>' . $_SESSION['productos'][$i][0] . '</td>
