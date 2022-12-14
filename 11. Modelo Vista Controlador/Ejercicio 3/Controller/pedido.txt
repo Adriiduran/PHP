@@ -1,0 +1,6 @@
+PRODUCTOS:
+
+Nombre: gafas - precio: 23 - cantidad: 3
+
+CANTIDAD TOTAL DE PRODUCTOS : 3
+PRECIO TOTAL : 69€

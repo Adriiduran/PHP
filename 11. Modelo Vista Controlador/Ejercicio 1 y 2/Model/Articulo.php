@@ -76,6 +76,12 @@ class Articulo
         $conexion->exec($borrado);
     }
 
+    public function modify($titulo,$contenido){
+        $conexion = BlogDB::connectDB();
+        $modificacion = "UPDATE articulos SET titulo='$titulo',contenido='$contenido' WHERE codigo=$this->codigo";
+        $conexion->exec($modificacion);
+    }
+
     public static function getArticulos()
     {
         $conexion = BlogDB::connectDB();

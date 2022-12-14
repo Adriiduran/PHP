@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.articulo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.articulo__titulo{
+    background-color: ;
+}
