@@ -71,7 +71,6 @@ class Alumno
         $conexion = EscuelaDB::connectDB();
         $insercion = "INSERT INTO alumnos (matricula, nombre, apellidos, curso) VALUES ('$this->matricula' ,'$this->nombre', '$this->apellidos', '$this->curso')";
         $conexion->exec($insercion);
-        echo "Estado de la petición: ".http_response_code()."<br>";
     }
 
     public static function delete($matricula)
@@ -79,7 +78,6 @@ class Alumno
         $conexion = EscuelaDB::connectDB();
         $borrado = "DELETE FROM alumnos WHERE matricula='$matricula'";
         $conexion->exec($borrado);
-        echo "Estado de la petición: ".http_response_code()."<br>";
     }
 
     public function update($matricula,$nombre,$apellidos,$curso)
@@ -87,7 +85,6 @@ class Alumno
         $conexion = EscuelaDB::connectDB();
         $update = "UPDATE alumnos SET matricula='$matricula',nombre='$nombre',apellidos='$apellidos',curso='$curso'";
         $conexion->exec($update);
-        echo "Estado de la petición: ".http_response_code()."<br>";
     }
 
     public static function getAlumnos()
@@ -103,7 +100,6 @@ class Alumno
         }
 
         return $alumnos;
-        echo "Estado de la petición: ".http_response_code()."<br>";
     }
 
     public static function getAlumnosByCurso($curso){
@@ -117,7 +113,7 @@ class Alumno
             $alumnos[] = $alumno;
         }
 
-        echo "Estado de la petición: ".http_response_code()."<br>";
+        
         return $alumnos;
     }
 
@@ -132,21 +128,18 @@ class Alumno
             $alumnos[] = $alumno;
         }
 
-        return $alumnos;
-        echo "Estado de la petición: ".http_response_code()."<br>";
+        return $alumnos; 
     }
 
     public static function matricularAlumno($matricula,$codigo){
         $conexion = EscuelaDB::connectDB();
         $insert = "INSERT INTO asignaturasalumno (matricula,codigo) values ('$matricula',$codigo)";
-        $conexion->exec($insert);
-        echo "Estado de la petición: ".http_response_code()."<br>";
+        $conexion->exec($insert); 
     }
 
     public static function cambioGrupo($matricula,$grupo){
         $conexion = EscuelaDB::connectDB();
         $insert = "UPDATE alumnos SET curso='$grupo' where matricula='$matricula'";
         $conexion->exec($insert);
-        echo "Estado de la petición: ".http_response_code()."<br>";
     }
 }

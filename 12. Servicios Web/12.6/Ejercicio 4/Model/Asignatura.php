@@ -41,7 +41,7 @@ class Asignatura
         $conexion = EscuelaDB::connectDB();
         $insercion = "INSERT INTO asignaturas (nombre) VALUES ('$this->nombre')";
         $conexion->exec($insercion);
-        echo http_response_code();
+        
     }
 
     public function delete()
@@ -49,7 +49,7 @@ class Asignatura
         $conexion = EscuelaDB::connectDB();
         $borrado = "DELETE FROM asignaturas WHERE codigo=$this->codigo";
         $conexion->exec($borrado);
-        echo http_response_code();
+        
     }
 
     public static function getasignaturas()
@@ -66,7 +66,7 @@ class Asignatura
         }
 
         return $asignaturas;
-        echo http_response_code();
+        
     }
 
     public static function getAsignaturasPorAlumno($matricula)
@@ -83,6 +83,6 @@ class Asignatura
         }
 
         return $asignaturas;
-        echo http_response_code();
+        
     }
 }

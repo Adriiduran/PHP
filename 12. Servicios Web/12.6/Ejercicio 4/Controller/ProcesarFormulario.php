@@ -38,5 +38,6 @@
         $data['lista'] = "ALUMNO ELIMINADO CORRECTAMENTE";
     }
 
+    echo httpResponse(http_response_code()) . "<br>";
+
     include '../View/MostrarLista.php';
-?>
