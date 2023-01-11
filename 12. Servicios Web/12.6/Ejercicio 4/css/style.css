@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+form{
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: aqua;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+form>*{
+    margin: 10px;
+}

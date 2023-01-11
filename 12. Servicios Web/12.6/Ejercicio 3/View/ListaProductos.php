@@ -12,7 +12,7 @@
             echo "No se han encontrado productos";
         }
         else{
-            echo implode("<br>",unserialize($_SESSION['lista']));
+            echo json_encode(implode("<br>",unserialize($_SESSION['lista'])));
         }
     ?>
     <br>
